@@ -446,8 +446,6 @@
         it.only('should scroll when the month is below the visible area', () => {
           const position = monthScroller.position;
           overlay.revealDate(new Date(2021, 2, 1), false);
-          // eslint-disable-next-line no-console
-          console.log(position, monthScroller.position);
           expect(monthScroller.position).to.equal(position + 1);
         });
       });
