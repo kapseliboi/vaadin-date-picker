@@ -415,7 +415,7 @@
         overlay = fixture('overlay');
         monthScroller = overlay.$.monthScroller;
         monthScroller.style.setProperty('--vaadin-infinite-scroller-buffer-offset', monthScrollerOffset);
-        monthScroller.style.height = `calc(var(--vaadin-infinite-scroller-item-height) * ${monthScrollerItems})`;
+        monthScroller.style.height = `${270 * monthScrollerItems}px`;
         overlay.i18n = getDefaultI18n();
         overlay.$.monthScroller.bufferSize = 3;
         overlay.$.yearScroller.bufferSize = 3;
