@@ -22,6 +22,7 @@ This program is available under Apache License Version 2.0, available at https:/
     <style>
       :host {
         display: flex;
+        justify-content: center;
         flex-direction: column;
         height: 100%;
         width: 100%;
@@ -62,6 +63,7 @@ This program is available under Apache License Version 2.0, available at https:/
 
       #scrollers {
         display: flex;
+        align-items: center;
         height: 100%;
         width: 100%;
         position: relative;
@@ -389,13 +391,14 @@ This program is available under Apache License Version 2.0, available at https:/
             const diff = this._differenceInMonths(date, this._originDate);
             const scrolledAboveViewport = this.$.monthScroller.position > diff;
 
-            console.error(this.$.monthScroller.itemHeight, this.$.monthScroller.clientHeight, this.$.monthScroller.bufferOffset);
             const visibleArea = Math.max(
               this.$.monthScroller.itemHeight,
               this.$.monthScroller.clientHeight - this.$.monthScroller.bufferOffset * 2
             );
             const visibleItems = visibleArea / this.$.monthScroller.itemHeight;
             const scrolledBelowViewport = this.$.monthScroller.position + visibleItems - 1 < diff;
+
+            console.error(this.$.monthScroller.itemHeight, this.$.monthScroller.clientHeight, this.$.monthScroller.bufferOffset);
 
             if (scrolledAboveViewport) {
               this._scrollToPosition(diff, animate);
