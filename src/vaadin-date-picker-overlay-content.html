@@ -398,7 +398,7 @@ This program is available under Apache License Version 2.0, available at https:/
             const visibleItems = visibleArea / this.$.monthScroller.itemHeight;
             const scrolledBelowViewport = this.$.monthScroller.position + visibleItems - 1 < diff;
 
-            console.error(this.$.monthScroller.itemHeight, this.$.monthScroller.clientHeight, this.$.monthScroller.bufferOffset);
+            // console.error(this.$.monthScroller.itemHeight, this.$.monthScroller.clientHeight, this.$.monthScroller.bufferOffset);
 
             if (scrolledAboveViewport) {
               this._scrollToPosition(diff, animate);
